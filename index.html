@@ -63,16 +63,14 @@
       font-weight: 600;
       font-size: 0.9rem;
     }
-    .projects article {
+    .projects article,
+    .work-experience article {
       margin-bottom: 1rem;
     }
     .projects a.repo-link {
       font-weight: 600;
       color: #0073e6;
       font-size: 1.05rem;
-    }
-    .work-experience article {
-      margin-bottom: 1rem;
     }
     .work-experience h4 {
       margin-bottom: 0.2rem;
@@ -133,16 +131,17 @@
   <section>
     <h3>Technical Skills</h3>
     <ul class="skills">
-      <li>Java</li>
-      <li>Spring Boot</li>
-      <li>Python</li>
-      <li>REST APIs</li>
-      <li>AWS (EC2, ECS, Lambda)</li>
-      <li>Docker</li>
-      <li>Kubernetes</li>
-      <li>Kafka</li>
-      <li>SQL & NoSQL (PostgreSQL, Cassandra, Redis)</li>
-      <li>CI/CD (Jenkins, GitHub Actions)</li>
+      <li>Java 17</li>
+      <li>Spring Boot, Spring JPA, Hibernate</li>
+      <li>Python, Flask</li>
+      <li>REST APIs & OpenAPI/Swagger</li>
+      <li>AWS (EC2, ECS, Lambda, S3, SNS, SQS, CloudFormation)</li>
+      <li>Docker & Kubernetes</li>
+      <li>Kafka & MQTT</li>
+      <li>Databases: PostgreSQL, Oracle, DynamoDB, Cassandra, Redis, Snowflake</li>
+      <li>CI/CD: Jenkins, GitHub Actions, Spinnaker</li>
+      <li>Monitoring: Prometheus, Grafana</li>
+      <li>Testing: JUnit, Pytest, Postman, Swagger</li>
     </ul>
   </section>
 
@@ -202,8 +201,10 @@
       <h4>DTE Energy</h4>
       <time>Jan 2025 – Present</time>
       <ul>
-        <li>Automated Java pipelines to process real-time operational data improving reliability and performance.</li>
-        <li>Optimized SQL queries and built Power BI dashboards to enhance data analysis and reporting.</li>
+        <li>Automated Java-based data pipelines to ingest, process, and validate real-time operational data with high reliability.</li>
+        <li>Optimized SQL queries and implemented indexing to improve data processing speed and accuracy.</li>
+        <li>Created Power BI dashboards for data visualization and trend analysis supporting key stakeholder decisions.</li>
+        <li>Collaborated cross-functionally to refine data validation processes and streamline reporting.</li>
       </ul>
     </article>
 
@@ -211,8 +212,11 @@
       <h4>T-Mobile</h4>
       <time>May 2024 – Jan 2025</time>
       <ul>
-        <li>Developed Java microservices integrating Oracle DB, Salesforce, and Informatica MDM, improving data accuracy.</li>
-        <li>Built REST APIs with OpenAPI specs and created CI/CD pipelines using GitHub Actions.</li>
+        <li>Engineered Java microservices using Spring Boot and JDBC to integrate Oracle DB, Salesforce, and Informatica MDM for master data management.</li>
+        <li>Developed REST APIs adhering to OpenAPI specifications with versioning and proper HTTP semantics.</li>
+        <li>Implemented ORM with Spring JPA and Hibernate to enhance database interaction efficiency.</li>
+        <li>Built CI/CD pipelines with GitHub Actions to automate deployments and reduce release times.</li>
+        <li>Led Agile sprint coordination with cross-functional teams to deliver backend features meeting master data requirements.</li>
       </ul>
     </article>
 
@@ -220,8 +224,11 @@
       <h4>HPE Aruba Networking</h4>
       <time>Sept 2019 – Nov 2022</time>
       <ul>
-        <li>Designed microservices for IoT data ingestion using Kafka, MQTT, Redis, and Spring Boot.</li>
-        <li>Built monitoring dashboards with Prometheus and Grafana; automated deployments using Docker, Kubernetes, and Terraform.</li>
+        <li>Designed and implemented Java microservices for IoT device management and data ingestion pipelines using Kafka, MQTT, and Redis.</li>
+        <li>Created Python microservices for telemetry monitoring integrated with Prometheus and Grafana dashboards.</li>
+        <li>Automated containerized deployment pipelines using Docker, Kubernetes, Terraform, and Serverless Framework.</li>
+        <li>Modernized codebase utilizing Java 11+ features and design patterns improving maintainability and performance.</li>
+        <li>Participated in on-call rotations improving response and troubleshooting for production systems.</li>
       </ul>
     </article>
 
@@ -229,8 +236,11 @@
       <h4>Netcracker Technology</h4>
       <time>June 2017 – Aug 2019</time>
       <ul>
-        <li>Developed REST APIs with Spring Boot and Hibernate; integrated Kafka for real-time billing processing.</li>
-        <li>Optimized Oracle DB queries and implemented TDD with JUnit.</li>
+        <li>Developed RESTful APIs using Java Spring Boot and Hibernate ORM for billing and CRM systems.</li>
+        <li>Implemented Kafka-based event-driven integrations for asynchronous data processing.</li>
+        <li>Optimized Oracle database queries and stored procedures for improved throughput and reduced latency.</li>
+        <li>Practiced test-driven development using JUnit to improve code quality and reliability.</li>
+        <li>Collaborated with QA and product teams to ensure smooth deployment cycles and timely issue resolution.</li>
       </ul>
     </article>
   </section>
