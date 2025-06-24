@@ -104,6 +104,9 @@
       color: #888;
       margin: 3rem 0 1rem;
     }
+    ul {
+      padding-left: 1.2rem;
+    }
   </style>
 </head>
 <body>
@@ -144,21 +147,51 @@
   </section>
 
   <section class="projects">
-    <h3>Key Projects</h3>
+    <h3>Key Projects & Research</h3>
 
     <article>
-      <a href="https://github.com/soumyasvaidya/parking-lot" target="_blank" class="repo-link" rel="noopener">Parking Lot Management System</a>
-      <p>Design and implementation of a scalable parking lot system with multiple vehicle types using Java and OOP principles. Includes REST APIs and concurrency management.</p>
+      <a href="https://github.com/soumyasvaidya/parking-lot" target="_blank" class="repo-link" rel="noopener">
+        Parking Lot Management System
+      </a>
+      <p><em>A scalable multi-vehicle parking lot system built using Java and object-oriented principles.</em></p>
+      <ul>
+        <li><strong>Overview:</strong> Developed a backend system to efficiently manage parking slots for various vehicle types with support for concurrent vehicle entry and exit.</li>
+        <li><strong>Key Features:</strong> Slot allocation, vehicle type categorization, real-time availability tracking, and concurrency-safe slot management.</li>
+        <li><strong>Tech Stack:</strong> Java 17, Spring Boot, REST APIs, JUnit 5 for testing.</li>
+        <li><strong>My Role:</strong> Designed the class hierarchy implementing design patterns like Singleton and Factory. Developed RESTful APIs and implemented thread-safe concurrency controls.</li>
+        <li><strong>Challenges & Solutions:</strong> Managed race conditions during slot allocation using synchronized blocks and thread-safe collections to ensure data consistency.</li>
+        <li><strong>Outcome:</strong> Delivered a robust prototype capable of handling 100+ concurrent users with zero data conflicts.</li>
+      </ul>
     </article>
 
     <article>
-      <a href="https://github.com/soumyasvaidya/memory-leak-detection" target="_blank" class="repo-link" rel="noopener">Memory Leak Detection with LLMs</a>
-      <p>Python automation using Large Language Models to identify and analyze memory leaks in open-source projects. Included data mining and contextual code insights.</p>
+      <a href="https://github.com/soumyasvaidya/memory-leak-detection" target="_blank" class="repo-link" rel="noopener">
+        Memory Leak Detection with Large Language Models (LLMs)
+      </a>
+      <p><em>Python automation using AI models to identify and analyze memory leaks in open-source projects.</em></p>
+      <ul>
+        <li><strong>Overview:</strong> Mined 40,000+ GitHub repositories to create a large dataset of memory leak issues for research and training AI models.</li>
+        <li><strong>Key Features:</strong> Automated data collection, contextual code analysis using LLMs, and actionable code recommendations for developers.</li>
+        <li><strong>Tech Stack:</strong> Python, Large Language Models (OpenAI GPT), Matplotlib for visualization.</li>
+        <li><strong>My Role:</strong> Developed Python automation scripts for mining repos and designed LLM-based analysis pipelines to enhance memory leak detection accuracy.</li>
+        <li><strong>Challenges & Solutions:</strong> Handled diverse codebases and memory leak patterns by integrating contextual insights through LLMs to reduce false positives.</li>
+        <li><strong>Outcome:</strong> Created an enhanced memory leak detection tool providing developers with practical, AI-powered recommendations.</li>
+      </ul>
     </article>
 
     <article>
-      <a href="https://github.com/soumyasvaidya/aws-serverless-demo" target="_blank" class="repo-link" rel="noopener">AWS Serverless Pipeline</a>
-      <p>Implementation of AWS Lambda functions with DynamoDB and SNS integration to build event-driven microservices and automated alerting system.</p>
+      <a href="https://github.com/soumyasvaidya/aws-serverless-demo" target="_blank" class="repo-link" rel="noopener">
+        AWS Serverless Pipeline
+      </a>
+      <p><em>Event-driven microservices using AWS Lambda, DynamoDB, SNS, and SQS for scalable serverless workflows.</em></p>
+      <ul>
+        <li><strong>Overview:</strong> Implemented serverless functions to automate data processing workflows with real-time alerting and monitoring.</li>
+        <li><strong>Key Features:</strong> Lambda functions for event handling, DynamoDB for storage, SNS/SQS for messaging and notifications.</li>
+        <li><strong>Tech Stack:</strong> AWS Lambda, DynamoDB, SNS, SQS, Serverless Framework, Terraform.</li>
+        <li><strong>My Role:</strong> Developed Lambda functions and integrated AWS services to build reliable, scalable serverless pipelines with infrastructure as code.</li>
+        <li><strong>Challenges & Solutions:</strong> Ensured low-latency event processing and robust failure handling using SNS/SQS and retry strategies.</li>
+        <li><strong>Outcome:</strong> Delivered a maintainable serverless system that reduced operational overhead and improved scalability.</li>
+      </ul>
     </article>
   </section>
 
