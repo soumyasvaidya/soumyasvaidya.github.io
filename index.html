@@ -1,278 +1,307 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Soumya Vaidya | Backend Software Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-<style>
-  /* Reset */
-  *, *::before, *::after {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  html, body {
-    height: 100%;
-    width: 100%;
-  }
-
-  body {
-    font-family: 'Poppins', sans-serif;
-    color: #222;
-    background: #fefefe;
-    display: flex;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  /* Sidebar */
-  .sidebar {
-    position: fixed;
-    top: 0; left: 0; bottom: 0;
-    width: 280px;
-    background: #1e2a38;
-    color: #fefefe;
-    padding: 2.5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 1000;
-  }
-  .sidebar .name {
-    font-weight: 700;
-    font-size: 1.9rem;
-    letter-spacing: 2px;
-    margin-bottom: 0.2rem;
-  }
-  .sidebar .role {
-    font-weight: 300;
-    font-size: 1.1rem;
-    opacity: 0.75;
-    margin-bottom: 2rem;
-  }
-  .sidebar nav a {
-    display: block;
-    color: #a8b0bc;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.7rem 0;
-    border-left: 4px solid transparent;
-    transition: color 0.3s, border-color 0.3s;
-  }
-  .sidebar nav a:hover,
-  .sidebar nav a.active {
-    color: #fefefe;
-    border-left: 4px solid #f87171;
-  }
-
-  /* Main content */
-  main {
-    margin-left: 280px;
-    padding: 3rem 4rem;
-    width: calc(100vw - 280px);
-    overflow-y: auto;
-  }
-  main section {
-    margin-bottom: 4rem;
-  }
-  main section h2 {
-    font-weight: 700;
-    font-size: 2.1rem;
-    color: #1e2a38;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #f87171;
-    padding-bottom: 0.3rem;
-  }
-  main section p,
-  main section ul {
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #4a4a4a;
-  }
-  main section ul {
-    margin-top: 1rem;
-    padding-left: 1.2rem;
-  }
-  main section ul li {
-    margin-bottom: 0.5rem;
-  }
-  main section a {
-    color: #f87171;
-    font-weight: 600;
-  }
-  main section a:hover {
-    text-decoration: underline;
-  }
-
-  /* Projects cards */
-  .project-card {
-    background: #fff5f5;
-    border-radius: 10px;
-    padding: 1.3rem 1.7rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 10px rgba(248, 113, 113, 0.15);
-    transition: box-shadow 0.3s ease;
-  }
-  .project-card:hover {
-    box-shadow: 0 10px 24px rgba(248, 113, 113, 0.3);
-  }
-  .project-card a {
-    font-weight: 600;
-    font-size: 1.15rem;
-    color: #d94c4c;
-  }
-  .project-card a:hover {
-    color: #f87171;
-  }
-
-  /* Footer */
-  footer {
-    margin-top: 5rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #888;
-  }
-
-  /* Responsive */
-  @media (max-width: 720px) {
-    .sidebar {
-      position: relative;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soumya Vaidya | Backend Software Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
       width: 100%;
-      height: auto;
-      padding: 1.5rem 1rem;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .sidebar nav {
+      background: #121212;
+      color: #eee;
+      font-family: 'Poppins', sans-serif;
       display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      width: 280px;
+      background: #1f2937; /* dark slate */
+      color: #a5b4fc; /* cool purple */
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.8);
+      z-index: 1000;
+    }
+    .sidebar .name {
+      font-weight: 700;
+      font-size: 2.1rem;
+      letter-spacing: 2px;
+      color: #60a5fa; /* bright blue accent */
+      margin-bottom: 0.25rem;
+    }
+    .sidebar .role {
+      font-weight: 300;
+      font-size: 1.1rem;
+      opacity: 0.75;
+      margin-bottom: 2rem;
+      color: #a5b4fc;
+    }
+    .sidebar nav a {
+      display: block;
+      color: #a5b4fc;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 0.7rem 0;
+      border-left: 4px solid transparent;
+      transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+      border-radius: 4px;
+    }
+    .sidebar nav a:hover,
+    .sidebar nav a.active {
+      color: #fff;
+      background-color: #2563eb; /* blue bg */
+      border-left: 4px solid #60a5fa;
+    }
+
+    /* Main content */
     main {
-      margin-left: 0;
-      padding: 2rem 1rem;
-      width: 100vw;
+      margin-left: 280px;
+      padding: 3rem 4rem;
+      width: calc(100vw - 280px);
+      overflow-y: auto;
+      background: #181a1f; /* very dark gray */
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.6);
     }
-  }
-</style>
+    main section {
+      margin-bottom: 4rem;
+    }
+    main section h2 {
+      font-weight: 700;
+      font-size: 2.3rem;
+      color: #60a5fa;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 0.4rem;
+    }
+    main section p,
+    main section ul {
+      font-weight: 400;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #d1d5db; /* light gray */
+    }
+    main section ul {
+      margin-top: 1rem;
+      padding-left: 1.4rem;
+    }
+    main section ul li {
+      margin-bottom: 0.6rem;
+    }
+    main section a {
+      color: #60a5fa;
+      font-weight: 600;
+    }
+    main section a:hover {
+      text-decoration: underline;
+      color: #93c5fd;
+    }
+
+    /* Projects cards */
+    .project-card {
+      background: #22272e;
+      border-radius: 12px;
+      padding: 1.6rem 2rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 8px 15px rgba(96, 165, 250, 0.15);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: default;
+    }
+    .project-card:hover {
+      box-shadow: 0 14px 28px rgba(96, 165, 250, 0.4);
+      transform: translateY(-4px);
+    }
+    .project-card a {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #60a5fa;
+    }
+    .project-card a:hover {
+      color: #93c5fd;
+    }
+    .project-desc {
+      margin-top: 0.5rem;
+      color: #cbd5e1;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    /* Contact Links */
+    #contact p a {
+      margin-right: 1.2rem;
+      font-size: 1.3rem;
+      vertical-align: middle;
+      color: #60a5fa;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    #contact p a:hover {
+      color: #93c5fd;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 1.5rem 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .sidebar nav {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      main {
+        margin-left: 0;
+        padding: 2rem 1rem;
+        width: 100vw;
+        box-shadow: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="sidebar">
-  <div>
-    <div class="name">Soumya Vaidya</div>
-    <div class="role">Backend Software Engineer</div>
-    <nav>
-      <a href="#about" class="active">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <div class="sidebar">
+    <div>
+      <div class="name">Soumya Vaidya</div>
+      <div class="role">Backend Software Engineer</div>
+      <nav>
+        <a href="#about" class="active">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div style="font-size: 0.8rem; opacity: 0.6;">© 2025 Soumya Vaidya</div>
   </div>
-  <div style="font-size: 0.8rem; opacity: 0.6;">© 2025 Soumya Vaidya</div>
-</div>
 
-<main>
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Software Engineer with 5+ years of experience specializing in backend development, microservices, and cloud-native applications. Skilled in building scalable APIs with Java, Spring Boot, Python, and AWS. Experienced in distributed systems, CI/CD pipelines, and container orchestration. Committed to delivering production-ready code within Agile teams.</p>
-  </section>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Software Engineer with 5+ years of experience specializing in backend development, microservices, and cloud-native applications. Skilled in building scalable APIs with Java, Spring Boot, Python, and AWS. Experienced in distributed systems, CI/CD pipelines, and container orchestration. Committed to delivering production-ready code within Agile teams.</p>
+    </section>
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>Java</li>
-      <li>Spring Boot</li>
-      <li>Python</li>
-      <li>REST APIs</li>
-      <li>AWS (EC2, ECS, Lambda)</li>
-      <li>Docker</li>
-      <li>Kubernetes</li>
-      <li>Kafka</li>
-      <li>SQL & NoSQL (PostgreSQL, Cassandra, Redis)</li>
-      <li>CI/CD (Jenkins, GitHub Actions)</li>
-    </ul>
-  </section>
-
-  <section id="projects">
-    <h2>Key Projects</h2>
-
-    <div class="project-card">
-      <div class="project-title"><a href="https://github.com/soumyasvaidya/parking-lot" target="_blank" rel="noopener">Parking Lot Management System</a></div>
-      <div class="project-desc">Designed and implemented a scalable parking lot system with multiple vehicle types using Java and OOP principles. Includes REST APIs, concurrency management, and robust testing to handle simultaneous parking operations efficiently.</div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-title"><a href="https://github.com/soumyasvaidya/memory-leak-detection" target="_blank" rel="noopener">Memory Leak Detection with LLMs</a></div>
-      <div class="project-desc">Automated Python scripts leveraging Large Language Models to detect and analyze memory leaks in 40,000+ GitHub repositories. Provided contextual insights and actionable recommendations to improve memory management in open-source projects.</div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-title"><a href="https://github.com/soumyasvaidya/aws-serverless-demo" target="_blank" rel="noopener">AWS Serverless Pipeline</a></div>
-      <div class="project-desc">Built event-driven microservices using AWS Lambda, DynamoDB, SNS, and SQS for scalable serverless architectures. Automated alerting system integrated for real-time failure notifications.</div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2>Work Experience</h2>
-
-    <article>
-      <h3>DTE Energy <time>Jan 2025 – Present</time></h3>
+    <section id="skills">
+      <h2>Technical Skills</h2>
       <ul>
-        <li>Automated Java pipelines to process real-time operational data improving reliability and performance.</li>
-        <li>Optimized SQL queries and built Power BI dashboards to enhance data analysis and reporting.</li>
+        <li>Java</li>
+        <li>Spring Boot</li>
+        <li>Python</li>
+        <li>REST APIs</li>
+        <li>AWS (EC2, ECS, Lambda)</li>
+        <li>Docker</li>
+        <li>Kubernetes</li>
+        <li>Kafka</li>
+        <li>SQL & NoSQL (PostgreSQL, Cassandra, Redis)</li>
+        <li>CI/CD (Jenkins, GitHub Actions)</li>
       </ul>
-    </article>
+    </section>
 
-    <article>
-      <h3>T-Mobile <time>May 2024 – Jan 2025</time></h3>
-      <ul>
-        <li>Developed Java microservices integrating Oracle DB, Salesforce, and Informatica MDM, improving data accuracy and sync latency.</li>
-        <li>Built REST APIs with OpenAPI specs and created CI/CD pipelines using GitHub Actions to streamline deployments.</li>
-      </ul>
-    </article>
+    <section id="projects">
+      <h2>Key Projects</h2>
 
-    <article>
-      <h3>HPE Aruba Networking <time>Sept 2019 – Nov 2022</time></h3>
-      <ul>
-        <li>Designed microservices for IoT data ingestion using Kafka, MQTT, Redis, and Spring Boot.</li>
-        <li>Built monitoring dashboards with Prometheus and Grafana; automated deployments using Docker, Kubernetes, and Terraform.</li>
-      </ul>
-    </article>
+      <div class="project-card">
+        <a href="https://github.com/soumyasvaidya/parking-lot" target="_blank" rel="noopener">Parking Lot Management System</a>
+        <p class="project-desc">Designed and implemented a scalable parking lot system with multiple vehicle types using Java and OOP principles. Includes REST APIs, concurrency management, and robust testing to handle simultaneous parking operations efficiently.</p>
+      </div>
 
-    <article>
-      <h3>Netcracker Technology <time>June 2017 – Aug 2019</time></h3>
-      <ul>
-        <li>Developed REST APIs with Spring Boot and Hibernate; integrated Kafka for real-time billing processing.</li>
-        <li>Optimized Oracle DB queries and implemented test-driven development with JUnit.</li>
-      </ul>
-    </article>
-  </section>
+      <div class="project-card">
+        <a href="https://github.com/soumyasvaidya/memory-leak-detection" target="_blank" rel="noopener">Memory Leak Detection with LLMs</a>
+        <p class="project-desc">Automated Python scripts leveraging Large Language Models to detect and analyze memory leaks in 40,000+ GitHub repositories. Provided contextual insights and actionable recommendations to improve memory management in open-source projects.</p>
+      </div>
 
-  <section id="education">
-    <h2>Education & Awards</h2>
-    <p><strong>Master of Science, Computer and Information Science</strong><br />
-    University of Michigan-Dearborn, 2025 (GPA: 4.0/4.0)</p>
+      <div class="project-card">
+        <a href="https://github.com/soumyasvaidya/aws-serverless-demo" target="_blank" rel="noopener">AWS Serverless Pipeline</a>
+        <p class="project-desc">Built event-driven microservices using AWS Lambda, DynamoDB, SNS, and SQS for scalable serverless architectures. Automated alerting system integrated for real-time failure notifications.</p>
+      </div>
+    </section>
 
-    <p><strong>Bachelor of Engineering, Computer Science and Engineering</strong><br />
-    Siddaganga Institute of Technology, 2017 (GPA: 3.8/4.0)</p>
+    <section id="experience">
+      <h2>Work Experience</h2>
 
-    <p><strong>Awards:</strong> Aruba Recognition Award, HPE FY21 Life Inside Recognition</p>
-  </section>
+      <article>
+        <h3>DTE Energy <time>Jan 2025 – Present</time></h3>
+        <ul>
+          <li>Automated Java pipelines to process real-time operational data improving reliability and performance.</li>
+          <li>Optimized SQL queries and built Power BI dashboards to enhance data analysis and reporting.</li>
+        </ul>
+      </article>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📞 (616) 900-3380 | ✉️ <a href="mailto:soumyavaidya09@gmail.com">soumyavaidya09@gmail.com</a></p>
-    <p>
-      <a href="https://linkedin.com/in/soumya-vaidya" target="_blank" aria-label="LinkedIn Profile">🔗 LinkedIn</a>
-      <a href="https://github.com/soumyasvaidya" target="_blank" aria-label="GitHub Profile">🐱 GitHub</a>
-    </p>
-  </section>
-</main>
+      <article>
+        <h3>T-Mobile <time>May 2024 – Jan 2025</time></h3>
+        <ul>
+          <li>Developed Java microservices integrating Oracle DB, Salesforce, and Informatica MDM, improving data accuracy and sync latency.</li>
+          <li>Built REST APIs with OpenAPI specs and created CI/CD pipelines using GitHub Actions to streamline deployments.</li>
+        </ul>
+      </article>
 
+      <article>
+        <h3>HPE Aruba Networking <time>Sept 2019 – Nov 2022</time></h3>
+        <ul>
+          <li>Designed microservices for IoT data ingestion using Kafka, MQTT, Redis, and Spring Boot.</li>
+          <li>Built monitoring dashboards with Prometheus and Grafana; automated deployments using Docker, Kubernetes, and Terraform.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Netcracker Technology <time>June 2017 – Aug 2019</time></h3>
+        <ul>
+          <li>Developed REST APIs with Spring Boot and Hibernate; integrated Kafka for real-time billing processing.</li>
+          <li>Optimized Oracle DB queries and implemented test-driven development with JUnit.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="education">
+      <h2>Education & Awards</h2>
+      <p><strong>Master of Science, Computer and Information Science</strong><br />
+      University of Michigan-Dearborn, 2025 (GPA: 4.0/4.0)</p>
+
+      <p><strong>Bachelor of Engineering, Computer Science and Engineering</strong><br />
+      Siddaganga Institute of Technology, 2017 (GPA: 3.8/4.0)</p>
+
+      <p><strong>Awards:</strong> Aruba Recognition Award, HPE FY21 Life Inside Recognition</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>📞 (616) 900-3380 | ✉️ <a href="mailto:soumyavaidya09@gmail.com">soumyavaidya09@gmail.com</a></p>
+      <p>
+        <a href="https://linkedin.com/in/soumya-vaidya" target="_blank" aria-label="LinkedIn Profile">🔗 LinkedIn</a>
+        <a href="https://github.com/soumyasvaidya" target="_blank" aria-label="GitHub Profile">🐱 GitHub</a>
+      </p>
+    </section>
+
+  </main>
 </body>
 </html>
