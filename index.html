@@ -4,230 +4,177 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Soumya Vaidya | Backend Software Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
 <style>
-  /* Reset and base */
+  /* Reset */
   *, *::before, *::after {
-    box-sizing: border-box;
+    margin: 0; padding: 0; box-sizing: border-box;
   }
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+
   body {
-    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f7fa;
-    color: #2c3e50;
-    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+    background: #fefefe;
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
-  a {
-    color: #3498db; text-decoration: none;
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 280px;
+    background: #1e2a38;
+    color: #fefefe;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
   }
-  a:hover {
+  .sidebar .name {
+    font-weight: 700;
+    font-size: 1.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.2rem;
+  }
+  .sidebar .role {
+    font-weight: 300;
+    font-size: 1.1rem;
+    opacity: 0.75;
+    margin-bottom: 2rem;
+  }
+  .sidebar nav a {
+    display: block;
+    color: #a8b0bc;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.7rem 0;
+    border-left: 4px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .sidebar nav a:hover,
+  .sidebar nav a.active {
+    color: #fefefe;
+    border-left: 4px solid #f87171;
+  }
+
+  /* Main content */
+  main {
+    margin-left: 280px;
+    padding: 3rem 4rem;
+    width: calc(100vw - 280px);
+    overflow-y: auto;
+  }
+  main section {
+    margin-bottom: 4rem;
+  }
+  main section h2 {
+    font-weight: 700;
+    font-size: 2.1rem;
+    color: #1e2a38;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f87171;
+    padding-bottom: 0.3rem;
+  }
+  main section p,
+  main section ul {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+  }
+  main section ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+  }
+  main section ul li {
+    margin-bottom: 0.5rem;
+  }
+  main section a {
+    color: #f87171;
+    font-weight: 600;
+  }
+  main section a:hover {
     text-decoration: underline;
   }
 
-  /* Header/Nav */
-  header {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
-  nav {
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 1rem;
-  }
-  .logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    color: #2980b9;
-  }
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-  .nav-links a {
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.3rem 0.5rem;
-    transition: color 0.3s ease;
-  }
-  .nav-links a:hover {
-    color: #1c5980;
-  }
-
-  /* Container */
-  main {
-    max-width: 900px;
-    margin: 100px auto 40px; /* margin top accounts for fixed header */
-    padding: 0 1rem;
-  }
-
-  /* Section styles */
-  section {
-    margin-bottom: 3.5rem;
-    background: white;
-    padding: 2rem 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 12px 25px rgba(44, 62, 80, 0.08);
-  }
-  section h2 {
-    margin-top: 0; margin-bottom: 1.5rem;
-    font-size: 2rem;
-    color: #2980b9;
-    border-bottom: 3px solid #3498db;
-    padding-bottom: 0.4rem;
-    font-weight: 700;
-  }
-
-  /* About */
-  #about p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-
-  /* Skills */
-  #skills ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.9rem 1.5rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  #skills li {
-    background: #d6eaf8;
-    color: #21618c;
-    padding: 0.5rem 1.3rem;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 1rem;
-    box-shadow: 0 2px 8px rgba(33, 97, 140, 0.3);
-    transition: background-color 0.3s ease;
-    cursor: default;
-  }
-  #skills li:hover {
-    background: #2980b9;
-    color: white;
-    box-shadow: 0 4px 12px rgba(33, 97, 140, 0.6);
-  }
-
-  /* Projects */
-  #projects .project-card {
-    background: #f0f7ff;
-    border-radius: 12px;
-    padding: 1.5rem 2rem;
-    margin-bottom: 1.8rem;
-    box-shadow: 0 8px 20px rgba(33, 97, 140, 0.1);
+  /* Projects cards */
+  .project-card {
+    background: #fff5f5;
+    border-radius: 10px;
+    padding: 1.3rem 1.7rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(248, 113, 113, 0.15);
     transition: box-shadow 0.3s ease;
   }
-  #projects .project-card:hover {
-    box-shadow: 0 12px 30px rgba(33, 97, 140, 0.3);
+  .project-card:hover {
+    box-shadow: 0 10px 24px rgba(248, 113, 113, 0.3);
   }
-  #projects .project-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-    color: #21618c;
+  .project-card a {
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #d94c4c;
   }
-  #projects .project-title a {
-    color: #21618c;
-  }
-  #projects .project-title a:hover {
-    color: #2980b9;
-  }
-  #projects .project-desc {
-    font-size: 1rem;
-    color: #4d4d4d;
-    line-height: 1.5;
-  }
-
-  /* Work Experience */
-  #experience article {
-    margin-bottom: 1.8rem;
-  }
-  #experience h3 {
-    margin: 0.2rem 0 0.8rem 0;
-    font-size: 1.25rem;
-    color: #34495e;
-  }
-  #experience time {
-    font-style: italic;
-    color: #7f8c8d;
-    font-size: 0.9rem;
-  }
-  #experience ul {
-    margin-top: 0.6rem;
-    padding-left: 1.3rem;
-    color: #4d4d4d;
-    font-size: 1rem;
-  }
-  #experience ul li {
-    margin-bottom: 0.3rem;
-  }
-
-  /* Education */
-  #education p {
-    margin: 0.6rem 0 1rem 0;
-    font-size: 1.1rem;
-  }
-  #education strong {
-    color: #2c3e50;
-  }
-
-  /* Contact */
-  #contact {
-    text-align: center;
-  }
-  #contact a {
-    display: inline-block;
-    margin: 0 0.8rem;
-    font-size: 1.5rem;
-    color: #2980b9;
-    transition: color 0.3s ease;
-  }
-  #contact a:hover {
-    color: #1c5980;
+  .project-card a:hover {
+    color: #f87171;
   }
 
   /* Footer */
   footer {
+    margin-top: 5rem;
     text-align: center;
     font-size: 0.9rem;
-    color: #95a5a6;
-    margin: 2rem 0 1rem;
-    letter-spacing: 0.4px;
+    color: #888;
   }
 
   /* Responsive */
-  @media (max-width: 600px) {
-    nav {
-      flex-direction: column;
-      gap: 0.8rem;
+  @media (max-width: 720px) {
+    .sidebar {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 1.5rem 1rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
-    #skills ul {
-      justify-content: center;
+    .sidebar nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    main {
+      margin-left: 0;
+      padding: 2rem 1rem;
+      width: 100vw;
     }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <nav>
-    <div class="logo">Soumya Vaidya</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
+<div class="sidebar">
+  <div>
+    <div class="name">Soumya Vaidya</div>
+    <div class="role">Backend Software Engineer</div>
+    <nav>
+      <a href="#about" class="active">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </div>
+  <div style="font-size: 0.8rem; opacity: 0.6;">© 2025 Soumya Vaidya</div>
+</div>
 
 <main>
   <section id="about">
@@ -256,17 +203,17 @@
 
     <div class="project-card">
       <div class="project-title"><a href="https://github.com/soumyasvaidya/parking-lot" target="_blank" rel="noopener">Parking Lot Management System</a></div>
-      <div class="project-desc">Design and implementation of a scalable parking lot system with multiple vehicle types using Java and OOP principles. Includes REST APIs and concurrency management.</div>
+      <div class="project-desc">Designed and implemented a scalable parking lot system with multiple vehicle types using Java and OOP principles. Includes REST APIs, concurrency management, and robust testing to handle simultaneous parking operations efficiently.</div>
     </div>
 
     <div class="project-card">
       <div class="project-title"><a href="https://github.com/soumyasvaidya/memory-leak-detection" target="_blank" rel="noopener">Memory Leak Detection with LLMs</a></div>
-      <div class="project-desc">Python automation using Large Language Models to identify and analyze memory leaks in open-source projects. Included data mining and contextual code insights.</div>
+      <div class="project-desc">Automated Python scripts leveraging Large Language Models to detect and analyze memory leaks in 40,000+ GitHub repositories. Provided contextual insights and actionable recommendations to improve memory management in open-source projects.</div>
     </div>
 
     <div class="project-card">
       <div class="project-title"><a href="https://github.com/soumyasvaidya/aws-serverless-demo" target="_blank" rel="noopener">AWS Serverless Pipeline</a></div>
-      <div class="project-desc">Implementation of AWS Lambda functions with DynamoDB and SNS integration to build event-driven microservices and automated alerting system.</div>
+      <div class="project-desc">Built event-driven microservices using AWS Lambda, DynamoDB, SNS, and SQS for scalable serverless architectures. Automated alerting system integrated for real-time failure notifications.</div>
     </div>
   </section>
 
@@ -284,8 +231,8 @@
     <article>
       <h3>T-Mobile <time>May 2024 – Jan 2025</time></h3>
       <ul>
-        <li>Developed Java microservices integrating Oracle DB, Salesforce, and Informatica MDM, improving data accuracy.</li>
-        <li>Built REST APIs with OpenAPI specs and created CI/CD pipelines using GitHub Actions.</li>
+        <li>Developed Java microservices integrating Oracle DB, Salesforce, and Informatica MDM, improving data accuracy and sync latency.</li>
+        <li>Built REST APIs with OpenAPI specs and created CI/CD pipelines using GitHub Actions to streamline deployments.</li>
       </ul>
     </article>
 
@@ -301,7 +248,7 @@
       <h3>Netcracker Technology <time>June 2017 – Aug 2019</time></h3>
       <ul>
         <li>Developed REST APIs with Spring Boot and Hibernate; integrated Kafka for real-time billing processing.</li>
-        <li>Optimized Oracle DB queries and implemented TDD with JUnit.</li>
+        <li>Optimized Oracle DB queries and implemented test-driven development with JUnit.</li>
       </ul>
     </article>
   </section>
@@ -326,10 +273,6 @@
     </p>
   </section>
 </main>
-
-<footer>
-  &copy; 2025 Soumya Vaidya — Backend Software Engineer
-</footer>
 
 </body>
 </html>
