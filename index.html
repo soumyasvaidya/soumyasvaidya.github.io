@@ -1,196 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Soumya Vaidya – Backend Software Engineer</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 1rem 2rem 3rem;
-      color: #2c3e50;
-      line-height: 1.65;
-      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
-      box-shadow: inset 0 0 50px #ffffffcc;
-      border-radius: 12px;
-      transition: background 0.3s ease;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Soumya Vaidya | Backend Software Engineer</title>
+<style>
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #2c3e50;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #3498db; text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 
-    a {
-      color: #3498db;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+  /* Header/Nav */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  nav {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #2980b9;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .nav-links a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+    transition: color 0.3s ease;
+  }
+  .nav-links a:hover {
+    color: #1c5980;
+  }
 
-    a:hover {
-      color: #2980b9;
-      text-decoration: underline;
-    }
+  /* Container */
+  main {
+    max-width: 900px;
+    margin: 100px auto 40px; /* margin top accounts for fixed header */
+    padding: 0 1rem;
+  }
 
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
+  /* Section styles */
+  section {
+    margin-bottom: 3.5rem;
+    background: white;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 25px rgba(44, 62, 80, 0.08);
+  }
+  section h2 {
+    margin-top: 0; margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #2980b9;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.4rem;
+    font-weight: 700;
+  }
 
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-      color: #34495e;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      text-shadow: 1px 1px 2px #bdc3c7;
-    }
+  /* About */
+  #about p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
 
-    header h2 {
-      font-weight: 400;
-      font-size: 1.4rem;
-      color: #7f8c8d;
-      letter-spacing: 1px;
-    }
+  /* Skills */
+  #skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #skills li {
+    background: #d6eaf8;
+    color: #21618c;
+    padding: 0.5rem 1.3rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(33, 97, 140, 0.3);
+    transition: background-color 0.3s ease;
+    cursor: default;
+  }
+  #skills li:hover {
+    background: #2980b9;
+    color: white;
+    box-shadow: 0 4px 12px rgba(33, 97, 140, 0.6);
+  }
 
-    .contact-info div {
-      margin: 0.4rem 0;
-      font-size: 1rem;
-    }
+  /* Projects */
+  #projects .project-card {
+    background: #f0f7ff;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 8px 20px rgba(33, 97, 140, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  #projects .project-card:hover {
+    box-shadow: 0 12px 30px rgba(33, 97, 140, 0.3);
+  }
+  #projects .project-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: #21618c;
+  }
+  #projects .project-title a {
+    color: #21618c;
+  }
+  #projects .project-title a:hover {
+    color: #2980b9;
+  }
+  #projects .project-desc {
+    font-size: 1rem;
+    color: #4d4d4d;
+    line-height: 1.5;
+  }
 
-    section {
-      background: white;
-      padding: 2rem 2.5rem;
-      margin-bottom: 2rem;
-      border-radius: 14px;
-      box-shadow: 0 12px 30px rgba(52, 73, 94, 0.15);
-      transition: box-shadow 0.3s ease;
-    }
+  /* Work Experience */
+  #experience article {
+    margin-bottom: 1.8rem;
+  }
+  #experience h3 {
+    margin: 0.2rem 0 0.8rem 0;
+    font-size: 1.25rem;
+    color: #34495e;
+  }
+  #experience time {
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+  #experience ul {
+    margin-top: 0.6rem;
+    padding-left: 1.3rem;
+    color: #4d4d4d;
+    font-size: 1rem;
+  }
+  #experience ul li {
+    margin-bottom: 0.3rem;
+  }
 
-    section:hover {
-      box-shadow: 0 16px 40px rgba(52, 73, 94, 0.3);
-    }
+  /* Education */
+  #education p {
+    margin: 0.6rem 0 1rem 0;
+    font-size: 1.1rem;
+  }
+  #education strong {
+    color: #2c3e50;
+  }
 
-    h3 {
-      border-bottom: 3px solid #3498db;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      color: #2980b9;
-      font-weight: 700;
-      font-size: 1.8rem;
-    }
+  /* Contact */
+  #contact {
+    text-align: center;
+  }
+  #contact a {
+    display: inline-block;
+    margin: 0 0.8rem;
+    font-size: 1.5rem;
+    color: #2980b9;
+    transition: color 0.3s ease;
+  }
+  #contact a:hover {
+    color: #1c5980;
+  }
 
-    ul.skills {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem 1.5rem;
-    }
+  /* Footer */
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #95a5a6;
+    margin: 2rem 0 1rem;
+    letter-spacing: 0.4px;
+  }
 
-    ul.skills li {
-      background: #d6eaf8;
-      color: #21618c;
-      padding: 0.5rem 1.2rem;
-      border-radius: 25px;
-      font-weight: 600;
-      font-size: 1rem;
-      box-shadow: 0 2px 8px rgba(33, 97, 140, 0.3);
-      transition: background-color 0.3s ease;
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      gap: 0.8rem;
     }
-
-    ul.skills li:hover {
-      background: #2980b9;
-      color: white;
-      box-shadow: 0 4px 12px rgba(33, 97, 140, 0.6);
+    #skills ul {
+      justify-content: center;
     }
-
-    .projects article,
-    .work-experience article {
-      margin-bottom: 1.5rem;
-    }
-
-    .projects a.repo-link {
-      font-weight: 700;
-      color: #2c3e50;
-      font-size: 1.2rem;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s ease;
-    }
-
-    .projects a.repo-link:hover {
-      border-color: #3498db;
-      color: #3498db;
-    }
-
-    .work-experience h4 {
-      margin-bottom: 0.3rem;
-      font-weight: 700;
-      color: #34495e;
-      font-size: 1.2rem;
-    }
-
-    .work-experience time {
-      font-style: italic;
-      color: #7f8c8d;
-      font-size: 0.95rem;
-    }
-
-    ul {
-      padding-left: 1.4rem;
-      font-size: 1rem;
-      color: #4d4d4d;
-    }
-
-    .resume-button {
-      display: inline-block;
-      padding: 0.65rem 1.5rem;
-      background: #3498db;
-      color: white;
-      border-radius: 6px;
-      font-weight: 700;
-      margin-top: 1.5rem;
-      text-decoration: none;
-      box-shadow: 0 6px 15px rgba(52, 152, 219, 0.5);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .resume-button:hover {
-      background: #2980b9;
-      box-shadow: 0 8px 20px rgba(41, 128, 185, 0.7);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #95a5a6;
-      margin: 3rem 0 1rem;
-      letter-spacing: 0.4px;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Soumya Vaidya</h1>
-    <h2>Backend Software Engineer</h2>
-    <div class="contact-info">
-      <div>📞 (616) 900-3380 | ✉️ <a href="mailto:soumyavaidya09@gmail.com">soumyavaidya09@gmail.com</a></div>
-      <div>
-        🔗 
-        <a href="https://linkedin.com/in/soumya-vaidya" target="_blank" rel="noopener">LinkedIn</a> | 
-        <a href="https://github.com/soumyasvaidya" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </header>
 
-  <section>
-    <h3>About Me</h3>
-    <p>
-      Software Engineer with 5+ years of experience specializing in backend development, microservices, and cloud-native applications. Skilled in building scalable APIs with Java, Spring Boot, Python, and AWS. Experienced in distributed systems, CI/CD pipelines, and container orchestration. Committed to delivering production-ready code within Agile teams.
-    </p>
+<header>
+  <nav>
+    <div class="logo">Soumya Vaidya</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Software Engineer with 5+ years of experience specializing in backend development, microservices, and cloud-native applications. Skilled in building scalable APIs with Java, Spring Boot, Python, and AWS. Experienced in distributed systems, CI/CD pipelines, and container orchestration. Committed to delivering production-ready code within Agile teams.</p>
   </section>
 
-  <section>
-    <h3>Technical Skills</h3>
-    <ul class="skills">
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
       <li>Java</li>
       <li>Spring Boot</li>
       <li>Python</li>
@@ -204,31 +251,30 @@
     </ul>
   </section>
 
-  <section class="projects">
-    <h3>Key Projects</h3>
+  <section id="projects">
+    <h2>Key Projects</h2>
 
-    <article>
-      <a href="https://github.com/soumyasvaidya/parking-lot" target="_blank" class="repo-link" rel="noopener">Parking Lot Management System</a>
-      <p>Design and implementation of a scalable parking lot system with multiple vehicle types using Java and OOP principles. Includes REST APIs and concurrency management.</p>
-    </article>
+    <div class="project-card">
+      <div class="project-title"><a href="https://github.com/soumyasvaidya/parking-lot" target="_blank" rel="noopener">Parking Lot Management System</a></div>
+      <div class="project-desc">Design and implementation of a scalable parking lot system with multiple vehicle types using Java and OOP principles. Includes REST APIs and concurrency management.</div>
+    </div>
 
-    <article>
-      <a href="https://github.com/soumyasvaidya/memory-leak-detection" target="_blank" class="repo-link" rel="noopener">Memory Leak Detection with LLMs</a>
-      <p>Python automation using Large Language Models to identify and analyze memory leaks in open-source projects. Included data mining and contextual code insights.</p>
-    </article>
+    <div class="project-card">
+      <div class="project-title"><a href="https://github.com/soumyasvaidya/memory-leak-detection" target="_blank" rel="noopener">Memory Leak Detection with LLMs</a></div>
+      <div class="project-desc">Python automation using Large Language Models to identify and analyze memory leaks in open-source projects. Included data mining and contextual code insights.</div>
+    </div>
 
-    <article>
-      <a href="https://github.com/soumyasvaidya/aws-serverless-demo" target="_blank" class="repo-link" rel="noopener">AWS Serverless Pipeline</a>
-      <p>Implementation of AWS Lambda functions with DynamoDB and SNS integration to build event-driven microservices and automated alerting system.</p>
-    </article>
+    <div class="project-card">
+      <div class="project-title"><a href="https://github.com/soumyasvaidya/aws-serverless-demo" target="_blank" rel="noopener">AWS Serverless Pipeline</a></div>
+      <div class="project-desc">Implementation of AWS Lambda functions with DynamoDB and SNS integration to build event-driven microservices and automated alerting system.</div>
+    </div>
   </section>
 
-  <section class="work-experience">
-    <h3>Work Experience</h3>
+  <section id="experience">
+    <h2>Work Experience</h2>
 
     <article>
-      <h4>DTE Energy</h4>
-      <time>Jan 2025 – Present</time>
+      <h3>DTE Energy <time>Jan 2025 – Present</time></h3>
       <ul>
         <li>Automated Java pipelines to process real-time operational data improving reliability and performance.</li>
         <li>Optimized SQL queries and built Power BI dashboards to enhance data analysis and reporting.</li>
@@ -236,8 +282,7 @@
     </article>
 
     <article>
-      <h4>T-Mobile</h4>
-      <time>May 2024 – Jan 2025</time>
+      <h3>T-Mobile <time>May 2024 – Jan 2025</time></h3>
       <ul>
         <li>Developed Java microservices integrating Oracle DB, Salesforce, and Informatica MDM, improving data accuracy.</li>
         <li>Built REST APIs with OpenAPI specs and created CI/CD pipelines using GitHub Actions.</li>
@@ -245,8 +290,7 @@
     </article>
 
     <article>
-      <h4>HPE Aruba Networking</h4>
-      <time>Sept 2019 – Nov 2022</time>
+      <h3>HPE Aruba Networking <time>Sept 2019 – Nov 2022</time></h3>
       <ul>
         <li>Designed microservices for IoT data ingestion using Kafka, MQTT, Redis, and Spring Boot.</li>
         <li>Built monitoring dashboards with Prometheus and Grafana; automated deployments using Docker, Kubernetes, and Terraform.</li>
@@ -254,8 +298,7 @@
     </article>
 
     <article>
-      <h4>Netcracker Technology</h4>
-      <time>June 2017 – Aug 2019</time>
+      <h3>Netcracker Technology <time>June 2017 – Aug 2019</time></h3>
       <ul>
         <li>Developed REST APIs with Spring Boot and Hibernate; integrated Kafka for real-time billing processing.</li>
         <li>Optimized Oracle DB queries and implemented TDD with JUnit.</li>
@@ -263,8 +306,8 @@
     </article>
   </section>
 
-  <section>
-    <h3>Education & Awards</h3>
+  <section id="education">
+    <h2>Education & Awards</h2>
     <p><strong>Master of Science, Computer and Information Science</strong><br />
     University of Michigan-Dearborn, 2025 (GPA: 4.0/4.0)</p>
 
@@ -274,13 +317,19 @@
     <p><strong>Awards:</strong> Aruba Recognition Award, HPE FY21 Life Inside Recognition</p>
   </section>
 
-  <section>
-    <h3>Resume</h3>
-    <a href="Soumya_Vaidya_Resume.pdf" class="resume-button" download>Download PDF Resume</a>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📞 (616) 900-3380 | ✉️ <a href="mailto:soumyavaidya09@gmail.com">soumyavaidya09@gmail.com</a></p>
+    <p>
+      <a href="https://linkedin.com/in/soumya-vaidya" target="_blank" aria-label="LinkedIn Profile">🔗 LinkedIn</a>
+      <a href="https://github.com/soumyasvaidya" target="_blank" aria-label="GitHub Profile">🐱 GitHub</a>
+    </p>
   </section>
+</main>
 
-  <footer>
-    &copy; 2025 Soumya Vaidya — Backend Software Engineer
-  </footer>
+<footer>
+  &copy; 2025 Soumya Vaidya — Backend Software Engineer
+</footer>
+
 </body>
 </html>
