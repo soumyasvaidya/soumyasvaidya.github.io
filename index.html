@@ -8,46 +8,76 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      color: #333;
-      line-height: 1.6;
-      background: #f9f9f9;
+      margin: 3rem auto;
+      padding: 1rem 2rem 3rem;
+      color: #2c3e50;
+      line-height: 1.65;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      box-shadow: inset 0 0 50px #ffffffcc;
+      border-radius: 12px;
+      transition: background 0.3s ease;
     }
+
     a {
-      color: #0073e6;
+      color: #3498db;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
+
+    a:hover {
+      color: #2980b9;
+      text-decoration: underline;
+    }
+
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
+
     header h1 {
+      font-size: 3rem;
+      font-weight: 700;
       margin-bottom: 0.2rem;
-      font-size: 2.5rem;
-      color: #222;
+      color: #34495e;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 2px #bdc3c7;
     }
+
     header h2 {
-      margin-top: 0;
-      font-weight: normal;
-      color: #555;
+      font-weight: 400;
+      font-size: 1.4rem;
+      color: #7f8c8d;
+      letter-spacing: 1px;
     }
-    .contact-info {
-      margin-top: 0.3rem;
+
+    .contact-info div {
+      margin: 0.4rem 0;
+      font-size: 1rem;
     }
+
     section {
       background: white;
-      padding: 1.5rem 2rem;
-      margin-bottom: 1.5rem;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      padding: 2rem 2.5rem;
+      margin-bottom: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(52, 73, 94, 0.15);
+      transition: box-shadow 0.3s ease;
     }
+
+    section:hover {
+      box-shadow: 0 16px 40px rgba(52, 73, 94, 0.3);
+    }
+
     h3 {
-      border-bottom: 2px solid #0073e6;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-      color: #0073e6;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      color: #2980b9;
+      font-weight: 700;
+      font-size: 1.8rem;
     }
+
     ul.skills {
       list-style: none;
       padding: 0;
@@ -55,55 +85,85 @@
       flex-wrap: wrap;
       gap: 0.7rem 1.5rem;
     }
+
     ul.skills li {
-      background: #e6f0ff;
-      color: #00509e;
-      padding: 0.4rem 0.9rem;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-    .projects article,
-    .work-experience article {
-      margin-bottom: 1rem;
-    }
-    .projects a.repo-link {
-      font-weight: 600;
-      color: #0073e6;
-      font-size: 1.05rem;
-    }
-    .work-experience h4 {
-      margin-bottom: 0.2rem;
-      font-weight: 700;
-      color: #222;
-    }
-    .work-experience time {
-      font-style: italic;
-      color: #666;
-      font-size: 0.9rem;
-    }
-    .resume-button {
-      display: inline-block;
+      background: #d6eaf8;
+      color: #21618c;
       padding: 0.5rem 1.2rem;
-      background: #0073e6;
-      color: white;
-      border-radius: 4px;
+      border-radius: 25px;
       font-weight: 600;
-      margin-top: 1rem;
-      text-decoration: none;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(33, 97, 140, 0.3);
       transition: background-color 0.3s ease;
     }
-    .resume-button:hover {
-      background: #005bb5;
+
+    ul.skills li:hover {
+      background: #2980b9;
+      color: white;
+      box-shadow: 0 4px 12px rgba(33, 97, 140, 0.6);
     }
+
+    .projects article,
+    .work-experience article {
+      margin-bottom: 1.5rem;
+    }
+
+    .projects a.repo-link {
+      font-weight: 700;
+      color: #2c3e50;
+      font-size: 1.2rem;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .projects a.repo-link:hover {
+      border-color: #3498db;
+      color: #3498db;
+    }
+
+    .work-experience h4 {
+      margin-bottom: 0.3rem;
+      font-weight: 700;
+      color: #34495e;
+      font-size: 1.2rem;
+    }
+
+    .work-experience time {
+      font-style: italic;
+      color: #7f8c8d;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 1.4rem;
+      font-size: 1rem;
+      color: #4d4d4d;
+    }
+
+    .resume-button {
+      display: inline-block;
+      padding: 0.65rem 1.5rem;
+      background: #3498db;
+      color: white;
+      border-radius: 6px;
+      font-weight: 700;
+      margin-top: 1.5rem;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(52, 152, 219, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .resume-button:hover {
+      background: #2980b9;
+      box-shadow: 0 8px 20px rgba(41, 128, 185, 0.7);
+    }
+
     footer {
       text-align: center;
       font-size: 0.85rem;
-      color: #888;
+      color: #95a5a6;
       margin: 3rem 0 1rem;
-    }
-    ul {
-      padding-left: 1.2rem;
+      letter-spacing: 0.4px;
     }
   </style>
 </head>
@@ -131,66 +191,35 @@
   <section>
     <h3>Technical Skills</h3>
     <ul class="skills">
-      <li>Java 17</li>
-      <li>Spring Boot, Spring JPA, Hibernate</li>
-      <li>Python, Flask</li>
-      <li>REST APIs & OpenAPI/Swagger</li>
-      <li>AWS (EC2, ECS, Lambda, S3, SNS, SQS, CloudFormation)</li>
-      <li>Docker & Kubernetes</li>
-      <li>Kafka & MQTT</li>
-      <li>Databases: PostgreSQL, Oracle, DynamoDB, Cassandra, Redis, Snowflake</li>
-      <li>CI/CD: Jenkins, GitHub Actions, Spinnaker</li>
-      <li>Monitoring: Prometheus, Grafana</li>
-      <li>Testing: JUnit, Pytest, Postman, Swagger</li>
+      <li>Java</li>
+      <li>Spring Boot</li>
+      <li>Python</li>
+      <li>REST APIs</li>
+      <li>AWS (EC2, ECS, Lambda)</li>
+      <li>Docker</li>
+      <li>Kubernetes</li>
+      <li>Kafka</li>
+      <li>SQL & NoSQL (PostgreSQL, Cassandra, Redis)</li>
+      <li>CI/CD (Jenkins, GitHub Actions)</li>
     </ul>
   </section>
 
   <section class="projects">
-    <h3>Key Projects & Research</h3>
+    <h3>Key Projects</h3>
 
     <article>
-      <a href="https://github.com/soumyasvaidya/parking-lot" target="_blank" class="repo-link" rel="noopener">
-        Parking Lot Management System
-      </a>
-      <p><em>A scalable multi-vehicle parking lot system built using Java and object-oriented principles.</em></p>
-      <ul>
-        <li><strong>Overview:</strong> Developed a backend system to efficiently manage parking slots for various vehicle types with support for concurrent vehicle entry and exit.</li>
-        <li><strong>Key Features:</strong> Slot allocation, vehicle type categorization, real-time availability tracking, and concurrency-safe slot management.</li>
-        <li><strong>Tech Stack:</strong> Java 17, Spring Boot, REST APIs, JUnit 5 for testing.</li>
-        <li><strong>My Role:</strong> Designed the class hierarchy implementing design patterns like Singleton and Factory. Developed RESTful APIs and implemented thread-safe concurrency controls.</li>
-        <li><strong>Challenges & Solutions:</strong> Managed race conditions during slot allocation using synchronized blocks and thread-safe collections to ensure data consistency.</li>
-        <li><strong>Outcome:</strong> Delivered a robust prototype capable of handling 100+ concurrent users with zero data conflicts.</li>
-      </ul>
+      <a href="https://github.com/soumyasvaidya/parking-lot" target="_blank" class="repo-link" rel="noopener">Parking Lot Management System</a>
+      <p>Design and implementation of a scalable parking lot system with multiple vehicle types using Java and OOP principles. Includes REST APIs and concurrency management.</p>
     </article>
 
     <article>
-      <a href="https://github.com/soumyasvaidya/memory-leak-detection" target="_blank" class="repo-link" rel="noopener">
-        Memory Leak Detection with Large Language Models (LLMs)
-      </a>
-      <p><em>Python automation using AI models to identify and analyze memory leaks in open-source projects.</em></p>
-      <ul>
-        <li><strong>Overview:</strong> Mined 40,000+ GitHub repositories to create a large dataset of memory leak issues for research and training AI models.</li>
-        <li><strong>Key Features:</strong> Automated data collection, contextual code analysis using LLMs, and actionable code recommendations for developers.</li>
-        <li><strong>Tech Stack:</strong> Python, Large Language Models (OpenAI GPT), Matplotlib for visualization.</li>
-        <li><strong>My Role:</strong> Developed Python automation scripts for mining repos and designed LLM-based analysis pipelines to enhance memory leak detection accuracy.</li>
-        <li><strong>Challenges & Solutions:</strong> Handled diverse codebases and memory leak patterns by integrating contextual insights through LLMs to reduce false positives.</li>
-        <li><strong>Outcome:</strong> Created an enhanced memory leak detection tool providing developers with practical, AI-powered recommendations.</li>
-      </ul>
+      <a href="https://github.com/soumyasvaidya/memory-leak-detection" target="_blank" class="repo-link" rel="noopener">Memory Leak Detection with LLMs</a>
+      <p>Python automation using Large Language Models to identify and analyze memory leaks in open-source projects. Included data mining and contextual code insights.</p>
     </article>
 
     <article>
-      <a href="https://github.com/soumyasvaidya/aws-serverless-demo" target="_blank" class="repo-link" rel="noopener">
-        AWS Serverless Pipeline
-      </a>
-      <p><em>Event-driven microservices using AWS Lambda, DynamoDB, SNS, and SQS for scalable serverless workflows.</em></p>
-      <ul>
-        <li><strong>Overview:</strong> Implemented serverless functions to automate data processing workflows with real-time alerting and monitoring.</li>
-        <li><strong>Key Features:</strong> Lambda functions for event handling, DynamoDB for storage, SNS/SQS for messaging and notifications.</li>
-        <li><strong>Tech Stack:</strong> AWS Lambda, DynamoDB, SNS, SQS, Serverless Framework, Terraform.</li>
-        <li><strong>My Role:</strong> Developed Lambda functions and integrated AWS services to build reliable, scalable serverless pipelines with infrastructure as code.</li>
-        <li><strong>Challenges & Solutions:</strong> Ensured low-latency event processing and robust failure handling using SNS/SQS and retry strategies.</li>
-        <li><strong>Outcome:</strong> Delivered a maintainable serverless system that reduced operational overhead and improved scalability.</li>
-      </ul>
+      <a href="https://github.com/soumyasvaidya/aws-serverless-demo" target="_blank" class="repo-link" rel="noopener">AWS Serverless Pipeline</a>
+      <p>Implementation of AWS Lambda functions with DynamoDB and SNS integration to build event-driven microservices and automated alerting system.</p>
     </article>
   </section>
 
@@ -201,10 +230,8 @@
       <h4>DTE Energy</h4>
       <time>Jan 2025 – Present</time>
       <ul>
-        <li>Automated Java-based data pipelines to ingest, process, and validate real-time operational data with high reliability.</li>
-        <li>Optimized SQL queries and implemented indexing to improve data processing speed and accuracy.</li>
-        <li>Created Power BI dashboards for data visualization and trend analysis supporting key stakeholder decisions.</li>
-        <li>Collaborated cross-functionally to refine data validation processes and streamline reporting.</li>
+        <li>Automated Java pipelines to process real-time operational data improving reliability and performance.</li>
+        <li>Optimized SQL queries and built Power BI dashboards to enhance data analysis and reporting.</li>
       </ul>
     </article>
 
@@ -212,11 +239,8 @@
       <h4>T-Mobile</h4>
       <time>May 2024 – Jan 2025</time>
       <ul>
-        <li>Engineered Java microservices using Spring Boot and JDBC to integrate Oracle DB, Salesforce, and Informatica MDM for master data management.</li>
-        <li>Developed REST APIs adhering to OpenAPI specifications with versioning and proper HTTP semantics.</li>
-        <li>Implemented ORM with Spring JPA and Hibernate to enhance database interaction efficiency.</li>
-        <li>Built CI/CD pipelines with GitHub Actions to automate deployments and reduce release times.</li>
-        <li>Led Agile sprint coordination with cross-functional teams to deliver backend features meeting master data requirements.</li>
+        <li>Developed Java microservices integrating Oracle DB, Salesforce, and Informatica MDM, improving data accuracy.</li>
+        <li>Built REST APIs with OpenAPI specs and created CI/CD pipelines using GitHub Actions.</li>
       </ul>
     </article>
 
@@ -224,11 +248,8 @@
       <h4>HPE Aruba Networking</h4>
       <time>Sept 2019 – Nov 2022</time>
       <ul>
-        <li>Designed and implemented Java microservices for IoT device management and data ingestion pipelines using Kafka, MQTT, and Redis.</li>
-        <li>Created Python microservices for telemetry monitoring integrated with Prometheus and Grafana dashboards.</li>
-        <li>Automated containerized deployment pipelines using Docker, Kubernetes, Terraform, and Serverless Framework.</li>
-        <li>Modernized codebase utilizing Java 11+ features and design patterns improving maintainability and performance.</li>
-        <li>Participated in on-call rotations improving response and troubleshooting for production systems.</li>
+        <li>Designed microservices for IoT data ingestion using Kafka, MQTT, Redis, and Spring Boot.</li>
+        <li>Built monitoring dashboards with Prometheus and Grafana; automated deployments using Docker, Kubernetes, and Terraform.</li>
       </ul>
     </article>
 
@@ -236,11 +257,8 @@
       <h4>Netcracker Technology</h4>
       <time>June 2017 – Aug 2019</time>
       <ul>
-        <li>Developed RESTful APIs using Java Spring Boot and Hibernate ORM for billing and CRM systems.</li>
-        <li>Implemented Kafka-based event-driven integrations for asynchronous data processing.</li>
-        <li>Optimized Oracle database queries and stored procedures for improved throughput and reduced latency.</li>
-        <li>Practiced test-driven development using JUnit to improve code quality and reliability.</li>
-        <li>Collaborated with QA and product teams to ensure smooth deployment cycles and timely issue resolution.</li>
+        <li>Developed REST APIs with Spring Boot and Hibernate; integrated Kafka for real-time billing processing.</li>
+        <li>Optimized Oracle DB queries and implemented TDD with JUnit.</li>
       </ul>
     </article>
   </section>
